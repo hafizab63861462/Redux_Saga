@@ -4,20 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
-import createSagaMiddleware from "@redux-saga/core";
-import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./store/userState";
-import userSaga from "./store/userSaga";
-
-const saga = createSagaMiddleware();
-const store = configureStore({
-  reducer: {
-    user: userReducer,
-  },
-  middleware: [saga],
-});
-saga.run(userSaga);
-
+import store from "./store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
