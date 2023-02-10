@@ -7,7 +7,7 @@ const userSlice = createSlice({
     isLoading: false,
   },
   reducers: {
-    getUsersFetch(state) {
+    getUsers(state) {
       state.isLoading = true;
     },
     getUsersSuccess(state, action) {
