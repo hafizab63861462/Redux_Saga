@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
-const UserList = ({ list, fetchAction }) => {
+const UserList = ({ list, GetUserDataAction }) => {
   useEffect(() => {
-    fetchAction();
+    GetUserDataAction();
   });
 
   return (

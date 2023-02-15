@@ -10,7 +10,7 @@ function mapStateToProps(state = { users: [] }) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAction: () => dispatch(userActions.getUsers()),
+    GetUserDataAction: () => dispatch(userActions.getUsers()),
   };
 };
 
