@@ -1,20 +1,20 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 import { userActions } from "./userState";
 
-function* workGetUserFetch() {
+function* FetchUsers() {
   try {
     const response = yield call(() =>
       fetch("https://gorest.co.in/public/v2/users")
     );
 
-    const formattedUsers = yield response.json();
-    yield put(userActions.getUsersSuccess(formattedUsers));
+    const parsedUsersData = yield response.json();
+    yield put(userActions.getUsersSuccess(parsedUsersData));
   } catch (error) {
     yield put(userActions.getUsersFailure(error));
   }
 }
 function* userSaga() {
-  yield takeEvery("user/getUsers", workGetUserFetch);
+  yield takeEvery("user/getUsers", FetchUsers);
 }
 
 export default userSaga;
