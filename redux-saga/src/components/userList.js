@@ -5,8 +5,6 @@ const UserList = ({ list, fetchAction }) => {
     fetchAction();
   });
 
-  console.log(list);
-
   return (
     <div className="p-4 m-4 container">
       <h1 className="pb-4">Users</h1>
